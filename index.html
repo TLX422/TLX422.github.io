@@ -325,13 +325,13 @@
 
         /* About Us 板块：虚线边框，背景浅灰 */
         .about-section {
-            margin: 40px 0;
-            padding: 20px 20px;
+            margin: 60px 60px; /* 左右加 30px 空隙！ */
+            padding: 50px 20px;
             border: 3px dashed #999;
-            border-radius: 8px;
+            border-radius: 16px;
             background: #f9f9f9;
             position: relative;
-            width: 100%;
+            width: calc(100% - 120px); /* 宽度自动缩进去 */
         }
 
         /* About 板块右下角蝴蝶装饰 */
@@ -417,7 +417,7 @@
         /* 联系我们板块：多层边框，青色主题 */
         .contact-section {
              position: relative; /* 必须开启，让角落装饰图能定位 */
-            margin: 40px 0;
+            margin: 60px 60px; /* 左右加 30px 空隙！ */
             padding: 30px 20px;
             border: 3px solid #00ced1;
             border-radius: 12px 8px 15px 10px; /* 不规则圆角 */
@@ -425,7 +425,7 @@
             position: relative;
             background-image: none;
             box-shadow: 0 0 0 4px #f5fffe, 0 0 0 7px #e0ffff; /* 多层外边框 */
-            width: 100%;
+            width: calc(100% - 120px); /* 宽度自动缩进去 */
             overflow: hidden; /* 防止装饰图超出边框 */
         }
 
@@ -457,7 +457,7 @@
         .contact-section .decor-right {
             position: absolute;
             bottom: -20px;
-            right: 300px;
+            right: 250px;
             width: 250px;
             height: 150px;
             background: url(images/decoration_Chameleon.png) no-repeat center;
@@ -471,7 +471,7 @@
         .contact-section .decor-rights {
             position: absolute;
             bottom: -20px;
-            right: -180px;
+            right: -200px;
             width: 500px;
             height: 400px;
             background: url(images/decoration_Tree.png) no-repeat center;
@@ -1073,9 +1073,5 @@
         });
     </script>
     
-    <!-- 底部版权 -->
-    <footer>
-        Copyright ©2002-2022 itawenya.github.io All Rights Reserved. 备案号：有个屁随便写
-    </footer>
 </body>
 </html>
