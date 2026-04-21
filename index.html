@@ -230,17 +230,17 @@
         .card {
             display: flex;
             align-items: center;
-            margin: 30px 0;
-            padding: 20px;
+            margin: 50px 50px; /* 左右加 30px 空隙！ */
+            padding: 30px 20px;
             border: 2px solid #000;
             border-radius: 8px;
             box-shadow: none;
             background: #fff;
             position: relative;
             overflow: hidden;
-            width: 100%;
-            max-width: 100%;
-        }
+           width: calc(100% - 60px); /* 宽度自动缩进去 */
+}
+
 
         /* 卡片交替左右布局 */
         .card:nth-child(1) { flex-direction: row; }
@@ -250,7 +250,7 @@
 
         /* 卡片图片容器：固定尺寸，hover旋转缩放 */
         .card-img {
-            width: 250px;
+            width: 200px;
             height: 250px;
             margin: 0 20px;
             border-radius: 0;
@@ -332,6 +332,8 @@
             background: #f9f9f9;
             position: relative;
             width: calc(100% - 120px); /* 宽度自动缩进去 */
+            height: 600px;
+            overflow: visible; /* 允许装饰图超出盒子 */
         }
 
         /* About 板块右下角蝴蝶装饰 */
@@ -342,24 +344,63 @@
             height: 150px;
             bottom: -20px;
             right: -20px;
+             bottom: 20px;
             background: url("images/decoration_Butterfly.png");
             background-size: contain;
             z-index: 1;
         }
 
         /* About 板块左上角装饰角 */
-        .about-section::before {
-            content: "";
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            top: -10px;
-            left: -10px;
-            background: url(images/decoration_Decoration.png);
-            border: 2px solid #999;
-            border-right: none;
-            border-bottom: none;
-        }
+       /* 左上角装饰 */
+          .about-section::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -15px;
+    width: 250px;
+    height: 250px;
+    background: url(images/decoration_Decoration.png) no-repeat center;
+    background-size: contain;
+    z-index: 1;
+}
+
+/* * 右上角装饰 */ 
+.about-section::after {
+    content: "";
+    position: absolute;
+   top: -100px;
+    right: -15px;
+    width: 250px;
+    height: 250px;
+    background: url(images/decoration_Decoration.png) no-repeat center;
+    background-size: contain;
+    z-index: 1;
+}
+/* 左下角装饰 */
+.about-section .corner-bottom-left {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    left: -15px;
+    width: 250px;
+    height: 250px;
+    background: url(images/decoration_Decoration.png) no-repeat center;
+    background-size: contain;
+    z-index: 1;
+}
+
+/* 右下角装饰 */
+.about-section .corner-bottom-right {
+    content: "";
+    position: absolute;
+    bottom: -100px;
+    right: -15px;
+    width: 250px;
+    height: 250px;
+    background: url(images/decoration_Decoration.png) no-repeat center;
+    background-size: contain;
+    z-index: 1;
+}
 
         /* About 标题 */
         .about-title {
@@ -426,6 +467,7 @@
             background-image: none;
             box-shadow: 0 0 0 4px #f5fffe, 0 0 0 7px #e0ffff; /* 多层外边框 */
             width: calc(100% - 120px); /* 宽度自动缩进去 */
+            height: 350px;
             overflow: hidden; /* 防止装饰图超出边框 */
         }
 
@@ -901,6 +943,8 @@
 
         <!-- 关于我们 -->
         <section id="about" class="about-section">
+            <div class="corner-bottom-left"></div>
+    <div class="corner-bottom-right"></div>
             <h2 class="about-title">About Us</h2>
             <div class="about-cards">
                 <div class="about-card">
